@@ -1,0 +1,156 @@
+//= require bootstrap-select
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.dual-list .list-group {
+    margin-top: 8px;
+}
+
+.list-left li, .list-right li {
+    cursor: pointer;
+}
+
+.list-arrows {
+    padding-top: 100px;
+}
+
+.list-arrows button {
+        margin-bottom: 20px;
+}
+
+.diente{
+  text-align: center
+}
+//paleta : negro = #0F0B0F, narango fuerte = #BC4F27, naranjo medio = #CA7535, naranjo suave =  #CC994D, rojo medio = #793341
+.row {
+    margin-right: 0px;
+}
+/* cambiar tipo de letra */
+nav.navbar ul.nav li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* cambiar el color de fondo a la barra */
+nav.navbar{
+    margin-bottom: 0px;
+    background-color: #36667F;
+}
+.navbar-default .navbar-brand {
+  color: white;
+}
+.navbar-default .navbar-brand:hover {
+  color: white;
+}
+.navbar .nav li a{
+    color: black;
+}
+/*Mouse encima
+.navbar .nav li a:hover{
+  color: white;
+}*/
+//color de principal ya nose usa creo :P
+/*.well {
+  background-color:#36667F;
+  color: white;
+}*/
+//cambiar tamaño de imagenes de banner de inicio
+.item {
+      display: block;
+      width: 100%;
+      height: 300px;
+}
+.item img {
+      height: 100%;
+      width: 100%;
+}
+//color de titulos de vistas
+a.list-group-item.active{
+    background-color: #36667F;
+}
+a.list-group-item.active:hover{
+    background-color: #36667F;
+}
+//menu lateral
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+
+//contactenos estilo
+.map-responsive{
+    margin-top:80px;
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.section {
+  position: relative;
+  width: 900px;
+  max-width: 80%;
+  border: 2px solid #36667F;
+  border-top: none;
+  text-align: center;
+  margin: 60px auto;
+}
+
+.section h1 {
+  position: relative;
+  margin-top: -14px;
+  display: inline-block;
+  letter-spacing: 4px;
+  color: #36667F;
+}
+
+.top-border{
+  position: absolute;
+  height: 2px;
+  width: 10%; //ancho borde top
+  background-color: #36667F;
+}
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}
+
+@media (max-width: 685px) {
+.top-border {
+  width: 18%;
+	}
+}
+
+.section p {
+  width: 61%;
+  margin: 20px auto 40px auto;
+  line-height: 30px;
+}
+
+@media (max-width: 500px) {
+  .top-border {
+    display: none;
+  }
+  .section {
+  border-top: 2px solid #333;
+  }
+  .section h1 {
+    margin: 20px 6px;
+  }
+}
+
+.calendario-registro {
+  margin-bottom: 20px;
+}

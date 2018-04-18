@@ -1,0 +1,93 @@
+<%= form_for(@paciente, :html => {:role => 'form', class:'form-horizontal'}) do |f| %>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="form-group<%= @paciente.errors[:nombre].any? ? " has-error" : "" %>">
+          <%= f.label :nombre, class:'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :nombre, class:'form-control' %>
+          <span class="help-inline">
+           <%= @paciente.errors[:nombre].any? ? @paciente.errors[:nombre].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:paterno].any? ? " has-error" : "" %>">
+          <%= f.label :paterno , class:'col-sm-2 control-label'%>
+        <div class="col-sm-10">
+          <%= f.text_field :paterno , class:'form-control'%>
+          <span class="help-inline">
+           <%= @paciente.errors[:paterno].any? ? @paciente.errors[:paterno].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:materna].any? ? " has-error" : "" %>">
+          <%= f.label :materno , class:'col-sm-2 control-label'%>
+        <div class="col-sm-10">
+          <%= f.text_field :materna , class:'form-control'%>
+          <span class="help-inline">
+           <%= @paciente.errors[:materna].any? ? @paciente.errors[:materna].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:telefono].any? ? " has-error" : "" %>">
+          <%= f.label :telefono, class:'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :telefono, class:'form-control' %>
+          <span class="help-inline">
+           <%= @paciente.errors[:telefono].any? ? @paciente.errors[:telefono].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:rut].any? ? " has-error" : "" %>">
+          <%= f.label :rut, class:'col-sm-2 control-label'%>
+        <div class="col-sm-10">
+          <%= f.text_field :rut , class:'form-control', placeholder: 'Ejemplo 12345678-9'%>
+          <span class="help-inline">
+           <%= @paciente.errors[:rut].any? ? @paciente.errors[:rut].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:edad].any? ? " has-error" : "" %>">
+          <%= f.label :edad , class:'col-sm-2 control-label'%>
+        <div class="col-sm-10">
+          <%= f.text_field :edad , class:'form-control'%>
+          <span class="help-inline">
+           <%= @paciente.errors[:edad].any? ? @paciente.errors[:edad].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:sexo].any? ? " has-error" : "" %>">
+          <%= f.label :sexo, class:'col-sm-2 control-label'%>
+        <div class="col-sm-10">
+          <%= f.radio_button :sexo, 'Femenino', :checked => true%> Mujer
+          <%= f.radio_button :sexo, 'Masculino' %> Hombre
+          <span class="help-inline">
+           <%= @paciente.errors[:sexo].any? ? @paciente.errors[:sexo].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:direccion].any? ? " has-error" : "" %>">
+          <%= f.label :direccion, class:'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :direccion, class:'form-control'%>
+          <span class="help-inline">
+           <%= @paciente.errors[:direccion].any? ? @paciente.errors[:direccion].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:numero].any? ? " has-error" : "" %>">
+          <%= f.label :numero, class:'col-sm-2 control-label' %>
+        <div class="col-sm-3">
+          <%= f.text_field :numero, class:'form-control'%>
+          <span class="help-inline">
+           <%= @paciente.errors[:numero].any? ? @paciente.errors[:numero].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group<%= @paciente.errors[:comuna_id].any? ? " has-error" : "" %>">
+            <%= f.label :Comuna, class:'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= f.collection_select :comuna_id, Comuna.all, :id, :nombre , {include_blank: 'Por favor selecciona una comuna'}, {class: 'form-control'}%>
+          <span class="help-inline">
+           <%= @paciente.errors[:comuna_id].any? ? @paciente.errors[:comuna_id].to_s[/\w([^"]*)/] : "" %></span>
+        </div>
+        </div>
+        <div class="form-group text-center">
+        <% if @paciente.errors.any? %>
+            <%= pluralize(@paciente.errors.count, "error") %>
+        <% end %>
+      </div>
+        <div class="col-sm-2 col-sm-offset-5">
+          <%= f.submit boton, class:'btn btn-primary'%>
+        </div>
+        </div>
+  <% end %>

@@ -1,0 +1,38 @@
+<br>
+<div align= right>
+
+  <%= form_tag(listar_agente_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Nombre Proveedor" %>
+   <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+
+  <% end %>
+</div><br>
+<table class="table">
+<div class="list-group" >
+  <a class="list-group-item active" >
+    <font FACE= "roman" size= 12 align= center>Listado de Proveedores</font>
+  </a>
+
+<tr>
+  <td align= center>Nombre</td>
+  <td align= center>Rut</td>
+  <td align= center>Telefono</td>
+
+</tr>
+
+    <% @agentes.each do |a| %>
+        <tr>
+          <td align= center><%= a.nombre %></td>
+          <td align= center><%= a.rut%></td>
+          <td align= center><%= a.telefono %></td>
+          <td><%= button_to 'Mostrar' ,agente_url(a), :class => "btn btn-primary" %></td>
+          <td><%= button_to 'Editar', editar_agente_url(a), :class => "btn btn-primary" %></td>
+          <td><%= button_to a, :class => "btn btn-danger", method: :delete, data: {confirm: 'Desea Continuar'} do %>
+                <span class="glyphicon glyphicon-trash"></span>
+            <% end %></td>
+
+        </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= paginate @agentes %>

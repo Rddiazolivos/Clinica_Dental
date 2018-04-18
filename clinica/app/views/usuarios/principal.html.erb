@@ -1,0 +1,15 @@
+
+<div class="col-md-12 col-md-offset-0.5">
+<div class="list-group" ALIGN=center>
+  <a  class="list-group-item active">
+  <h1 FACE= "roman" size= 12 align= center>Sección de Personal</h1>
+</a>
+
+  <div class="btn-group">
+    <%= link_to "Listar Especialista", listar_usuario_path(tipo: 'Medico'), method: :post, class: "btn btn-primary", role: "button" %>
+    <%= link_to "Listar Tecnicos", listar_usuario_path(tipo: 'Tecnico'), method: :post, class: "btn btn-primary", role: "button" %>
+    <%= link_to "Listar Otros", listar_usuario_path(tipo: 'Otros'), method: :post, class: "btn btn-primary", role: "button" %>
+</div>
+  <a class="list-group-item"><%= button_to '  Nuevo Personal   ', nuevo_usuario_path, class:'btn btn-primary'%></a>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+class Especialista < ApplicationRecord
+
+
+end

@@ -1,0 +1,204 @@
+
+<div class="row">
+    <div class="col-sm-3 col-md-3">
+        <div class="panel-group" id="accordion">
+          <% if current_user.tipo == 'Medico' %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseCero"><span class="glyphicon glyphicon-time">
+                        </span>Mi registro</a>
+                    </h4>
+                </div>
+                <div id="collapseCero" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-list-alt text-primary"></span><%=link_to "Listar", registro_agenda_path(@agenda)%>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          <%end%>
+          <% if menu!('agenda_vista') %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-calendar">
+                        </span>Agendas</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-th-list text-primary"></span><%=link_to "Listar", listar_agenda_path(@agenda)%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-plus text-success"></span><%=link_to "Nuevo", nuevo_agenda_path, :method=> :post%>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          <%end%>
+          <% if menu!('proveedor_vista') %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-tags">
+                        </span>Proveedores</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-th-list text-primary"></span><%=link_to "Listar", listar_agente_path%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-plus text-success"></span><%=link_to "Nuevo", nuevo_agente_path, :method=> :post%>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          <%end%>
+          <% if menu!('insumo_vista') %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-shopping-cart">
+                        </span>Insumos</a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-th-list text-primary"></span><%=link_to "Listar", listar_insumo_path%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-plus text-success"></span><%=link_to "Nuevo", nuevo_insumo_path, :method=> :post%>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          <%end%>
+          <% if menu!('paciente_vista') %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-briefcase">
+                        </span>Pacientes</a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-th-list text-primary"></span><%=link_to "Listar", listar_paciente_path%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-plus text-success"></span><%=link_to "Nuevo", nuevo_paciente_path, :method=> :post%>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+          <%end%>
+          <% if menu!('tratamiento_vista') %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-paperclip">
+                        </span>Tratamientos</a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-th-list text-primary"></span><%=link_to "Listar", listar_tratamiento_path%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-plus text-success"></span><%=link_to "Nuevo", nuevo_tratamiento_path, :method=> :post%>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          <%end%>
+          <% if menu!('usuario_vista') &&  menu!('grado_vista')%>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"><span class="glyphicon glyphicon-wrench">
+                        </span>Administración</a>
+                    </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table" >
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-list-alt text-primary"></span><%=link_to "Listar Especialista", listar_usuario_path(tipo: 'Medico'), method: :post %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-list-alt text-primary"></span><%=link_to "Listar Tecnico", listar_usuario_path(tipo: 'Tecnico'), method: :post %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-list-alt text-primary"></span><%=link_to "Listar Personal", listar_usuario_path(tipo: 'Otros'), method: :post %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-user text-warning"></span><%=link_to "Nuevo usuario", nuevo_usuario_path, method: :post%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-cog text-warning"></span><%=link_to "Permisos", grados_path%>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          <% end%>
+        </div>
+    </div>
+    <div class="col-sm-8 col-md-8">
+
+        <%= yield %>
+    </div>
+</div>
